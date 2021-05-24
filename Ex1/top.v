@@ -29,6 +29,8 @@ module blinds(
     input [3:0] func,
     output out
     );
+
+// hello world
     
     wire   out;
          
