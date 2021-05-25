@@ -36,6 +36,7 @@ module AC_system(
 			heating = 0;
 			cooling = 1;
 		end
+	end
 		 
 endmodule
 
