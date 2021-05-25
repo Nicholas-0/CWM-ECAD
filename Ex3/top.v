@@ -24,12 +24,12 @@ module monitor (
 	input change,
 	input on_off,
 	input clk,
-	output[7:0] counter_out
+	output reg [7:0] counter_out
 
     );
                     
     //Todo: add registers and wires, if needed
-	reg counter_out;
+
 
     //Todo: add user logic
 	// use non blocking assignments
