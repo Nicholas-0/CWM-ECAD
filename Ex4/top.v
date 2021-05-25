@@ -25,26 +25,25 @@ module LED(
 	output reg [2:0] colour
 	);
 
-	always @(posedge clk or button or posedge rst) begin
+	always @(posedge clk or posedge rst) begin
 		if (rst)
 			colour <= 3'b000;
 		else begin
-			if (colour == 3'b000 || 3'b111)
+			if (colour == 3'b000 || colour == 3'b111)
 				colour <= 3'b001;
-			else begin
-			if (colour == 3'b001 && button)
+			else if (colour == 3'b001 && button)
 				colour <= 3'b010;
-			if (colour == 3'b010 && button)
+			else if (colour == 3'b010 && button)
 				colour <= 3'b011;
-			if (colour == 3'b011 && button)
+			else if (colour == 3'b011 && button)
 				colour <= 3'b100;
-			if (colour == 3'b100 && button)
+			else if (colour == 3'b100 && button)
 				colour <= 3'b101;
-			if (colour == 3'b101 && button)
+			else if (colour == 3'b101 && button)
 				colour <= 3'b110;
-			if (colour == 3'b110 && button)
+			else if (colour == 3'b110 && button)
 				colour <= 3'b001;
-			end
+			
 		end
 	end
 endmodule

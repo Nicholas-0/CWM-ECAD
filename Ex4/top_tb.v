@@ -40,10 +40,11 @@ module top_tb(
 			$display("***TEST FAILED due to RESET***");
 			err = 1;
 		end
+
+		rst = 0;
 		forever begin
 		#(CLK_PERIOD)
-		rst = 0;
-		#(CLK_PERIOD*2)
+
 
 		if (colour != 3'b001) begin
 			$display("***TEST FAILED***");
@@ -85,20 +86,12 @@ module top_tb(
 			$display("***TEST FAILED***");
 			err = 1;
 		end
-
-		#(CLK_PERIOD)
-
-		if (colour != 3'b001) begin
-			$display("***TEST FAILED***");
-			err = 1;
-		end
-
 		
 		end
 	end
 
 	initial begin
-	#500
+	#200
 	if (err==0)
 		$display("***TEST PASSED***");
 		$finish;
