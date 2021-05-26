@@ -19,20 +19,20 @@
 module AC_system(
 	input clk,
 	input[4:0] temperature,
-	output heating,
-	output cooling
+	output reg heating,
+	output reg cooling
 	);
 
 	always @(posedge clk) begin
-		if (temperature <= 18) begin
+		if (temperature <= 5'd18) begin
 			heating = 1;
 			cooling = 0;
 		end
-		else if (18 < temperature < 22) begin
+		else if (5'd18 < temperature < 5'd22) begin
 			heating = 0;
 			cooling = 0;
 		end
-		else if (temperature >= 22) begin
+		else begin
 			heating = 0;
 			cooling = 1;
 		end
