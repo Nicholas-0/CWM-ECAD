@@ -32,6 +32,7 @@ module top_tb(
 	err = 0;
 	temperature = 5'd10;
 	#(CLK_PERIOD*2)
+
 	
 	// check if heating is on at low temp
 	if ((heating != 1) || (heating == 1 && cooling == 1)) begin
@@ -43,8 +44,10 @@ module top_tb(
 
 	forever begin
 	// Start low
+
 	temperature = 5'd16;
 	#(CLK_PERIOD*2)
+
 	
 	// Check if only heating is on
 	if ((heating != 1) || (heating == 1 && cooling == 1)) begin
@@ -55,6 +58,7 @@ module top_tb(
 	// edge case temp = 18
 	temperature = 5'd18;
 	#(CLK_PERIOD*2)
+
 	
 	// Check if only heating is on
 	if ((heating != 1) || (heating == 1 && cooling == 1)) begin
@@ -65,6 +69,7 @@ module top_tb(
 	// temp = 20
 	temperature = 5'd20;
 	#(CLK_PERIOD*2)
+
 	if (heating != 0 && cooling != 0) begin
 		$display("***TEST FAILED***One of them is on");
 		err = 1;
@@ -82,6 +87,7 @@ module top_tb(
 	// temp 26
 	temperature = 5'd26;
 	#(CLK_PERIOD*2)
+
 
 	if ((cooling != 1) || (heating == 1 && cooling == 1)) begin
 		$display("***TEST FAILED***Cooling not on at high temp/Both on");

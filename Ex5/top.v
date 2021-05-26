@@ -28,7 +28,7 @@ module AC_system(
 			heating = 1;
 			cooling = 0;
 		end
-		else if (5'd18 < temperature < 5'd22) begin
+		else if (temperature > 5'd18 && temperature < 5'd22) begin
 			heating = 0;
 			cooling = 0;
 		end
