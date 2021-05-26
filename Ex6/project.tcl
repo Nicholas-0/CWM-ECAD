@@ -22,7 +22,8 @@ create_fileset -constrset -quiet constraints
 
 # IP Core
 create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name mybram
-set_property -dict [list CONFIG.Component_Name {mybram}] [get_ips mybram]
+set_property -dict [list CONFIG.Write_Width_A {24} CONFIG.Write_Depth_A {8} CONFIG.Read_Width_A {24} CONFIG.Write_Width_B {24} CONFIG.Read_Width_B {24}] [get_ips mybram]
+# set_property -dict [list CONFIG.Component_Name {mybram}] [get_ips mybram]
 
 #Todo: add verilog modules here
 read_verilog "top.v"
