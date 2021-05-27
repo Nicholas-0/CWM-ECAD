@@ -30,7 +30,7 @@ module top_tb(
 	// Stimulus logic
 	initial begin
 	err = 0;
-	rst = 0;
+	rst = 1;
 	button = 0;
 	sel = 0;
 	#(CLK_PERIOD*2)
@@ -51,7 +51,7 @@ module top_tb(
 	end
 
 	forever begin
-	sel = 1;
+	sel = 0; // test 0
 	rst = 0;
 	button = 1;
 	#(CLK_PERIOD)
