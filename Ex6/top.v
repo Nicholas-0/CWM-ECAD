@@ -25,7 +25,7 @@ module RGB_light(
 	output [23:0] rgb
 	);
 
-mybram your_instance_name (
+mybram_1 your_instance_name (
   .clka(clk),    // input wire clka
   .ena(enable),      // input wire ena
   .wea(1'b0),      // input wire [0 : 0] wea
@@ -33,6 +33,15 @@ mybram your_instance_name (
   .dina(24'b0),    // input wire [23 : 0] dina
   .douta(rgb)  // output wire [23 : 0] douta
 );
+
+//mybram your_instance_name (
+//  .clka(clk),    // input wire clka
+//  .ena(enable),      // input wire ena
+//  .wea(1'b0),      // input wire [0 : 0] wea
+//  .addra(colour),  // input wire [2 : 0] addra
+//  .dina(24'b0),    // input wire [23 : 0] dina
+//  .douta(rgb)  // output wire [23 : 0] douta
+//);
 
 	
 
