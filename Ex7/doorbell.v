@@ -17,9 +17,9 @@ module doorbell(
 
 	always @(*) begin
 		// out gets b when sel is 1
-		if (sel) #(5) out = b;
+		if (sel) out = b;
 		// otherwise out gets a
-		else #(5) out = a;
+		else out = a;
 	end                
       
 endmodule

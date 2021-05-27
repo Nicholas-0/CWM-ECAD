@@ -51,7 +51,7 @@ module top_tb(
 	end
 
 	forever begin
-	sel = 0; // test 0
+	sel = 1;
 	rst = 0;
 	button = 1;
 	#(CLK_PERIOD)
