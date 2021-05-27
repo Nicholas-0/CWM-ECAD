@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Exercise #7 - Lights Selector
+// Exercise l#7 - Lights Selector
 // Student Name:
 // Date: 
 //
@@ -13,5 +13,36 @@
 //  outputs:
 //           light [23:0]
 //////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 100ps
 
+module Lights_selector(
+	input clk,
+	input sel,
+	input rst,
+	input button,
+	output [23:0] light
+	);
+
+LED myled(
+	.clk(clk),
+	.rst(rst),
+	.button(button),
+	.colour(colour)
+	);
+
+RGB_light myrgb(
+	.clk(clk),
+	.colour(colour),
+	.enable(1'b1),
+	.rgb(rgb)
+	);
+
+doorbell mydoorbell(
+	.a(24'hFFFFFF),
+	.b(rgb),
+	.out(light)
+	);
+
+endmodule
+	
 
