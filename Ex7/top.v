@@ -40,6 +40,7 @@ RGB_light myrgb(
 doorbell mydoorbell(
 	.a(24'hFFFFFF),
 	.b(rgb),
+	.sel(sel),
 	.out(light)
 	);
 
