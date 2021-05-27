@@ -50,6 +50,11 @@ module top_tb(
 		err = 1;
 	end
 
+	sel = 1;
+	rst = 0;
+	button = 1;
+	#(CLK_PERIOD*2) // Latency in block memory is 2 clock cycles
+
 	forever begin
 	sel = 1;
 	rst = 0;
@@ -91,11 +96,6 @@ module top_tb(
 			err = 1;
 	end
 
-	#(CLK_PERIOD)
-	if (light != 24'hFFFFFF) begin
-			$display("***TEST FAILED***");
-			err = 1;
-	end
 
 	end 
 
