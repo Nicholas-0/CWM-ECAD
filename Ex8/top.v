@@ -26,6 +26,9 @@ module top(
     output heating,
     output cooling
    );
+	
+	wire [4:0] concat_temp;
+	assign concat_temp = {temperature_4,temperature_3,temperature_2,temperature_1,temperature_0};
     
 
    /* clock infrastructure, do not modify */
@@ -47,7 +50,7 @@ module top(
 //Add logic here
 AC_system myac(
 	.clk(clk),
-	.temperature(temperature),
+	.temperature(concat_temp),
 	.heating(heating),
 	.cooling(cooling)
 	);

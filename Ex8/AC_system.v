@@ -3,7 +3,7 @@
 
 module AC_system(
 	input clk,
-	input[4:0] temperature,
+	input [4:0] temperature,
 	output reg heating,
 	output reg cooling
 	);
