@@ -16,6 +16,9 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES        [current_design]
 
 #############################################################################################################
 
+create_clock -name mysys_clk -period 100 [get_ports clk]
+
+
 set_property IOSTANDARD DIFF_SSTL12 [get_ports clk_n]
 set_property IOSTANDARD DIFF_SSTL12 [get_ports clk_p]
 set_property IOSTANDARD LVCMOS18 [get_ports rst_n]
@@ -38,7 +41,7 @@ set_property PACKAGE_PIN AL20 [get_ports temperature_3]
 set_property PACKAGE_PIN AT20 [get_ports temperature_4]
 set_property PULLUP true [get_ports rst_n]
 
-create_clock -name mysys_clk -period 100 [get_ports clk]
+
 
 
 
