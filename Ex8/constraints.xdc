@@ -16,7 +16,7 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES        [current_design]
 
 #############################################################################################################
 
-create_clock -name mysys_clk -period 100 [get_ports clk_p]
+create_clock -name clk -period 100 [get_ports clk_p]
 set_clock_groups -asynchronous -group [get_clocks clk -include_generated_clocks]
 
 
