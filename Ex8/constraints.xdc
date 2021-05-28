@@ -16,7 +16,7 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES        [current_design]
 
 #############################################################################################################
 
-create_clock -name mysys_clk -period 100 [get_ports clk]
+create_clock -name mysys_clk -period 100 waveform {50 100} [get_ports [list clk clk_n clk_p]]
 
 
 set_property IOSTANDARD DIFF_SSTL12 [get_ports clk_n]
